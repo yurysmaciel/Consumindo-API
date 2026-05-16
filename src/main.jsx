@@ -5,6 +5,8 @@ import "./index.css";
 import App from "./App.jsx";
 import LoginPage from "./pages/login.jsx";
 import CreateAnuncioPage from "./pages/createAnuncio.jsx";
+import Register from "./pages/register.jsx";
+import MeusAnuncios from "./pages/meusAnuncios.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -13,6 +15,8 @@ createRoot(document.getElementById("root")).render(
         <Route path={"/"} element={<App />} />
         <Route path={"/login"} element={<LoginPage />} />
         <Route path={"/criar"} element={<CreateAnuncioPage />} />
+        <Route path={"/register"} element={<Register />} />
+        <Route path={"/meusAnuncios"} element={<MeusAnuncios />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
