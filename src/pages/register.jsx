@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./register.css";
 
 export default function Register() {
   const [novoUsuario, setNovoUsuario] = useState({
@@ -48,62 +49,94 @@ export default function Register() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Crie sua conta</h1>
-      <label htmlFor="nome">Digite seu nome:</label>
-      <input
-        type="text"
-        name="nome"
-        id="nome"
-        value={novoUsuario.nome}
-        onChange={handleChange}
-      />
+    <div className="register-container">
+      <div className="register-card">
+        <h1>Crie sua conta</h1>
 
-      <label htmlFor="email">Digite seu melhor email:</label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        value={novoUsuario.email}
-        onChange={handleChange}
-      />
+        <p>Preencha os dados abaixo para criar seu cadastro</p>
 
-      <label htmlFor="senha">Crie sua senha:</label>
-      <input
-        type="password"
-        name="senha"
-        id="senha"
-        value={novoUsuario.senha}
-        onChange={handleChange}
-      />
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label htmlFor="nome">Nome</label>
 
-      <label htmlFor="telefone">Digite seu telefone</label>
-      <input
-        type="text"
-        name="telefone"
-        id="telefone"
-        value={novoUsuario.telefone}
-        onChange={handleChange}
-      />
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Digite seu nome"
+              value={novoUsuario.nome}
+              onChange={handleChange}
+            />
+          </div>
 
-      <label htmlFor="cidade">Em que cidade mora?</label>
-      <input
-        type="text"
-        name="cidade"
-        id="cidade"
-        value={novoUsuario.cidade}
-        onChange={handleChange}
-      />
+          <div className="input-group">
+            <label htmlFor="email">Email</label>
 
-      <label htmlFor="estado">Estado:</label>
-      <input
-        type="text"
-        name="estado"
-        id="estado"
-        value={novoUsuario.estado}
-        onChange={handleChange}
-      />
-      <button type="submit">Criar conta</button>
-    </form>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Digite seu email"
+              value={novoUsuario.email}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="senha">Senha</label>
+
+            <input
+              type="password"
+              id="senha"
+              name="senha"
+              placeholder="Crie sua senha"
+              value={novoUsuario.senha}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="telefone">Telefone</label>
+
+            <input
+              type="text"
+              id="telefone"
+              name="telefone"
+              placeholder="(00) 00000-0000"
+              value={novoUsuario.telefone}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="cidade">Cidade</label>
+
+            <input
+              type="text"
+              id="cidade"
+              name="cidade"
+              placeholder="Sua cidade"
+              value={novoUsuario.cidade}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="estado">Estado</label>
+
+            <input
+              type="text"
+              id="estado"
+              name="estado"
+              placeholder="Seu estado"
+              value={novoUsuario.estado}
+              onChange={handleChange}
+            />
+          </div>
+
+          <button type="submit">Criar conta</button>
+        </form>
+      </div>
+    </div>
   );
 }

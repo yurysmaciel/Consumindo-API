@@ -5,63 +5,79 @@
 }
 
 body {
-  background: #f4f6f9;
   font-family: Arial, sans-serif;
+  background: #f4f6f9;
 }
 
-.container {
+.meus-container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
-  padding: 40px 0;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
 .titulo {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #222;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  text-align: center;
+  color: #777;
+  margin-bottom: 40px;
 }
 
 .loading {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
-.lista-produtos {
+.lista-anuncios {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
 }
 
-.card-produto {
+.card-anuncio {
   background: white;
   border-radius: 20px;
   overflow: hidden;
+  cursor: pointer;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
-.card-produto:hover {
+.card-anuncio:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.card-produto img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
+.imagem-container {
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #f8f9fa;
 }
 
-.info-produto {
+.imagem-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.info-anuncio {
   padding: 20px;
 }
 
-.info-produto h2 {
+.info-anuncio h2 {
   font-size: 1.2rem;
   color: #222;
   margin-bottom: 15px;
-
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -69,31 +85,34 @@ body {
 }
 
 .preco {
-  color: #0d6efd;
   font-size: 1.5rem;
   font-weight: bold;
+  color: #0d6efd;
   margin-bottom: 15px;
 }
 
-.info-produto button {
+.info-anuncio button {
   width: 100%;
   padding: 12px;
   border: none;
   border-radius: 10px;
   background: linear-gradient(135deg, #0d6efd, #4f9cff);
-
   color: white;
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.info-produto button:hover {
-  transform: scale(1.03);
+.info-anuncio button:hover {
+  transform: scale(1.02);
 }
 
 @media (max-width: 768px) {
   .titulo {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .imagem-container {
+    height: 180px;
   }
 }

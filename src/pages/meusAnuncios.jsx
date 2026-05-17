@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./meusAnuncios.css";
 
 export default function MeusAnuncios() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function carregarMeusAnuncios() {
@@ -10,6 +14,7 @@ export default function MeusAnuncios() {
         setLoading(true);
 
         const token = JSON.parse(localStorage.getItem("token"));
+
         const userId = JSON.parse(localStorage.getItem("userId"));
 
         const res = await fetch(
@@ -24,6 +29,7 @@ export default function MeusAnuncios() {
         );
 
         const meusAnuncios = await res.json();
+
         setData(meusAnuncios);
       } catch (error) {
         console.log(error);
@@ -35,22 +41,45 @@ export default function MeusAnuncios() {
     carregarMeusAnuncios();
   }, []);
 
+  function acessarAnuncio(anuncio) {
+    navigate("/meusAnunciosEsp", {
+      state: anuncio,
+    });
+  }
+
   return (
-    <>
-      <h1>Meus anuncios</h1>
+    <div className="meus-container">
+      <h1 className="titulo">Meus anúncios</h1>
+
+      <p className="subtitulo">Visualize e gerencie seus anúncios</p>
+
       {loading ? (
-        <p>Loading...</p>
+        <p className="loading">Carregando...</p>
       ) : (
-        data.map((item, idx) => {
-          return (
-            <div key={idx}>
-              <h2>{item.titulo}</h2>
-              <img src={item.imagem} alt={item.titulo} />
-              <p>{item.preco}</p>
-            </div>
-          );
-        })
+        <div className="lista-anuncios">
+          {data.map((item, idx) => {
+            return (
+              <div
+                className="card-anuncio"
+                key={idx}
+                onClick={() => acessarAnuncio(item)}
+              >
+                <div className="imagem-container">
+                  <img src={item.imagem} alt={item.titulo} />
+                </div>
+
+                <div className="info-anuncio">
+                  <h2>{item.titulo}</h2>
+
+                  <p className="preco">R$ {item.preco}</p>
+
+                  <button>Ver anúncio</button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       )}
-    </>
+    </div>
   );
 }

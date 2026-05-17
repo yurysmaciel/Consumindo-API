@@ -27,23 +27,31 @@ function App() {
   console.log(data);
 
   return (
-    <>
-      <h1>Todos os anúncios</h1>
+    <div className="container">
+      <h1 className="titulo">Todos os anúncios</h1>
 
       {loading ? (
-        <p>Loading...</p>
+        <p className="loading">Carregando...</p>
       ) : (
-        data.map((item, idx) => {
-          return (
-            <div key={idx}>
-              <h2>{item.titulo}</h2>
-              <img src={item.imagem} alt={item.titulo} />
-              <p>{item.preco}</p>
-            </div>
-          );
-        })
+        <div className="lista-produtos">
+          {data.map((item, idx) => {
+            return (
+              <div className="card-produto" key={idx}>
+                <img src={item.imagem} alt={item.titulo} />
+
+                <div className="info-produto">
+                  <h2>{item.titulo}</h2>
+
+                  <p className="preco">R$ {item.preco}</p>
+
+                  <button>Ver anúncio</button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       )}
-    </>
+    </div>
   );
 }
 

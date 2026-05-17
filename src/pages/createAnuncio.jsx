@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./createAnuncio.css";
 
 export default function CreateAnuncioPage() {
   const [anuncio, setAnuncio] = useState({
@@ -22,6 +23,7 @@ export default function CreateAnuncioPage() {
     event.preventDefault();
 
     const token = JSON.parse(localStorage.getItem("token"));
+
     const userId = JSON.parse(localStorage.getItem("userId"));
 
     const res = await fetch(
@@ -45,30 +47,75 @@ export default function CreateAnuncioPage() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Criar anuncio</h1>
+    <div className="anuncio-container">
+      <div className="anuncio-card">
+        <h1>Criar anúncio</h1>
 
-      <label htmlFor="titulo">Titulo:</label>
-      <input type="text" name="titulo" id="titulo" onChange={handleChange} />
-      <label htmlFor="preco">preço:</label>
-      <input type="text" name="preco" id="preco" onChange={handleChange} />
-      <label htmlFor="descricaoCurta">descricaoCurta:</label>
-      <input
-        type="text"
-        name="descricaoCurta"
-        id="descricaoCurta"
-        onChange={handleChange}
-      />
-      <label htmlFor="descricaoCompleta">descricaoCompleta:</label>
-      <input
-        type="text"
-        name="descricaoCompleta"
-        id="descricaoCompleta"
-        onChange={handleChange}
-      />
-      <label htmlFor="imagem">imagem:</label>
-      <input type="text" name="imagem" id="imagem" onChange={handleChange} />
-      <button type="submit">Criar anuncio</button>
-    </form>
+        <p>Preencha as informações abaixo para publicar seu produto</p>
+
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label htmlFor="titulo">Título</label>
+
+            <input
+              type="text"
+              id="titulo"
+              name="titulo"
+              placeholder="Digite o título"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="preco">Preço</label>
+
+            <input
+              type="number"
+              id="preco"
+              name="preco"
+              placeholder="R$ 0,00"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="descricaoCurta">Descrição curta</label>
+
+            <input
+              type="text"
+              id="descricaoCurta"
+              name="descricaoCurta"
+              placeholder="Resumo rápido"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="descricaoCompleta">Descrição completa</label>
+
+            <textarea
+              id="descricaoCompleta"
+              name="descricaoCompleta"
+              placeholder="Detalhes completos do produto"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="imagem">URL da imagem</label>
+
+            <input
+              type="text"
+              id="imagem"
+              name="imagem"
+              placeholder="Cole a URL da imagem"
+              onChange={handleChange}
+            />
+          </div>
+
+          <button type="submit">Criar anúncio</button>
+        </form>
+      </div>
+    </div>
   );
 }
