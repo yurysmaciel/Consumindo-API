@@ -1,16 +1,100 @@
-# React + Vite
+# 🚀 Consumindo API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto desenvolvido para realizar consumo de APIs utilizando JavaScript/React, permitindo buscar, processar e exibir dados dinamicamente em uma interface amigável.
 
-Currently, two official plugins are available:
+## 📋 Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este projeto foi criado com o objetivo de praticar conceitos relacionados ao consumo de APIs, incluindo:
 
-## React Compiler
+- Requisições HTTP
+- Manipulação de dados JSON
+- Estados com React
+- Hooks (`useState`, `useEffect`)
+- Renderização dinâmica
+- Tratamento de erros
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+- React.js
+- JavaScript (ES6+)
+- HTML5
+- CSS3 (Em desenvolvimento)
+- Fetch API
+- Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Estrutura do projeto
+
+```bash
+Consumindo-API/
+│
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── assets/
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── package.json
+└── README.md
+```
+
+## ⚙️ Instalação
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/yurysmaciel/Consumindo-API.git .
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute o projeto:
+
+```bash
+npm run dev
+```
+
+O projeto ficará disponível em:
+
+```bash
+http://localhost:5173
+```
+
+## 🌐 API utilizada
+
+Utilizado API fornecida pelo professor Rodrigo
+
+## 🎯 Funcionalidades
+
+✔ Buscar dados da API  
+✔ Exibir informações dinamicamente  
+✔ Atualização automática dos dados  
+✔ Tratamento de erros  
+✔ Interface responsiva  (Em desenvolvimento)
+
+## 📚 Aprendizados
+
+Durante o desenvolvimento deste projeto foram praticados conceitos como:
+
+- Consumo de APIs REST
+- Hooks do React
+- Manipulação de estados
+- Organização de componentes
+- Boas práticas de desenvolvimento
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Yury Maciel**
+
+GitHub:
+https://github.com/yurysmaciel
+
+---
+
+⭐ Caso tenha gostado do projeto, deixe uma estrela no repositório.
