@@ -28,6 +28,10 @@ function App() {
 
   return (
     <div className="container">
+      <nav className="container-nav">
+        <a href="/login">login</a>
+        <a href="/criar">Cadastrar-se</a>
+      </nav>
       <h1 className="titulo">Todos os anúncios</h1>
 
       {loading ? (
